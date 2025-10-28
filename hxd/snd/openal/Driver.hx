@@ -19,7 +19,10 @@ class Driver implements hxd.snd.Driver {
 
 	static function checkAL(?msg) {
 		var e = AL.getError();
-		if (e != AL.NO_ERROR) throw "AL Error : " + e + (msg != null ? ", " + msg : "");
+		if (e != AL.NO_ERROR){
+			trace("AL Error : " + e + (msg != null ? ", " + msg : ""));
+			// throw "AL Error : " + e + (msg != null ? ", " + msg : "");
+		}
 		return e;
 	}
 
